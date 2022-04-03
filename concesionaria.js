@@ -1,4 +1,5 @@
 const autos = require("./autos");
+
 let concesionaria = {
   autos: ([] = autos),
 
@@ -50,5 +51,12 @@ let concesionaria = {
       });
     }else {return 0;}
   },
+
+  puedeComprar: function(unAuto, unaPersona)
+  {
+      if (unaPersona.capacidadDePagoTotal >= unAuto.precio  &&  unaPersona.capacidadDePagoEnCuotas >= unAuto.precio/unAuto.cuotas)  
+      {return true;} else {return false;}
+     
+  }
 };
 module.exports = concesionaria;
