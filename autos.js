@@ -8,7 +8,7 @@ let autos= [
         cuotas:12, 
         anio:2019, 
         patente:"APL123", 
-        vendido:false
+        vendido:true
     },
     {
         marca: "Toyota",
@@ -22,3 +22,9 @@ let autos= [
         vendido:false
     }];
     module.exports = autos;
+
+
+    // let a = autos.filter(function(autos){
+    //     return autos.patente==="JJK116";
+    // });
+    // console.log(a);
