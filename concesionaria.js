@@ -54,9 +54,38 @@ let concesionaria = {
 
   puedeComprar: function(unAuto, unaPersona)
   {
-      if (unaPersona.capacidadDePagoTotal >= unAuto.precio  &&  unaPersona.capacidadDePagoEnCuotas >= unAuto.precio/unAuto.cuotas)  
+      if (unaPersona.capacidadDePagoTotal >= unAuto.precio  
+            &&  unaPersona.capacidadDePagoEnCuotas >= unAuto.precio/unAuto.cuotas)  
       {return true;} else {return false;}
      
+  },
+
+  autosQuePuedeComprar: function(unaPersona)
+  {
+       let autosOk = [];
+       this.autosParaLaVenta().forEach(element => {
+         if (this.puedeComprar(element,unaPersona))
+         {
+            autosOk.push(element);
+         }
+      });  
+      return autosOk;
+
+      // let autosOk = this.autosParaLaVenta().map(function(elemento)
+      // {
+      //    return this.puedeComprar(elemento,unaPersona);
+      // });
+
+      //  this.autosParaLaVenta().forEach (function(elemento)
+      // {
+      //    this.puedeComprar(elemento,unaPersona);
+
+      //    // if(this.puedeComprar(elemento,unaPersona)===true)
+      //    // {
+      //    //    autosOk.push(elemento);
+      //    // }
+      // });
+            
   }
 };
 module.exports = concesionaria;

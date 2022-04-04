@@ -1,4 +1,5 @@
 const autos = require("./autos.js");
+const { autosQuePuedeComprar } = require("./concesionaria.js");
 const con = require("./concesionaria.js");
 const persona = require("./persona.js");
 
@@ -19,9 +20,9 @@ const persona = require("./persona.js");
 
 //console.log(persona);
 
-const unaPersona =  persona;
-const unAuto = con.buscarAuto("APL123");
-console.log(con.puedeComprar(unAuto,unaPersona));
+// const unaPersona =  persona;
+// const unAuto = con.buscarAuto("APL123");
+// console.log(con.puedeComprar(unAuto,unaPersona));
 
-//console.log(con.puedeComprar());
-
+ const unaPersona =  persona;
+ console.log(con.autosQuePuedeComprar(persona));
